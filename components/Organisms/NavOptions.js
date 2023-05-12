@@ -2,6 +2,7 @@ import { Icon } from "react-native-elements";
 import React from "react";
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import { FlatList } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const data = [
     {
@@ -18,12 +19,13 @@ const data = [
     },
 ]
 const NavOptions = () => {
+    const navigation = useNavigation()
     return(
         <FlatList 
         data={data}
         horizontal
         renderItem={({item}) => (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("MapScreen")}>
                 <View className="bg-gray-200 flex items-center justify-center p-2 pl-6 pb-8 pt-4 m-2 w-40 rounded">
                     <Image
                     style={{
