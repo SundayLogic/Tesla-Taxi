@@ -8,6 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 
+
 export default function App() {
   const stack = createStackNavigator();
   return (
