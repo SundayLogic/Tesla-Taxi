@@ -29,7 +29,7 @@ const NavOptions = () => {
           <View className="bg-gray-200 flex items-center justify-center p-5 pl-6 pb-8 pt-4 m-2 mt-9 w-40 rounded">
             <Image
               style={{
-                width: 120,
+                width: 160,
                 height: 120,
                 resizeMode: "contain",
               }}

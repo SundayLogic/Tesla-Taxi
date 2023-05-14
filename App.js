@@ -1,6 +1,7 @@
 import { Provider } from "react-redux";
 import HomeScreen from "./components/Screens/HomeScreen";
 import MapScreen from "./components/Screens/MapScreen";
+import PricingScreen from "./components/Screens/PricingScreen";
 import { store } from "./Redux/store";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
@@ -25,6 +26,13 @@ export default function App() {
             <stack.Screen
               name="MapScreen"
               component={MapScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <stack.Screen
+              name="PricingScreen"
+              component={PricingScreen}
               options={{
                 headerShown: false,
               }}
