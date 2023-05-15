@@ -1,6 +1,5 @@
 import React from "react";
 import { SafeAreaView, Text, View, Image } from "react-native";
-
 import { useSelector } from "react-redux";
 import { selectOrigin } from "../../Redux/slices/navSlice";
 import MapView from "react-native-maps";
@@ -15,18 +14,30 @@ const testCoordinates = {
 
 const MapScreen = () => {
   const origin = useSelector(selectOrigin);
-  return (
-    <View className="mt-9 flex justify-center items-center h-screen w-screen">
-      <MapView
-        className="flex-1 h-screen w-full"
-        mapType="standard"
-        initialRegion={testCoordinates}
-      />
 
-      <View className="h-1/2 w-full bg-black">
-        <VehicleSlider />
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 9,
+        }}
+      >
+        <MapView
+          style={{ flex: 1, width: "100%" }}
+          mapType="standard"
+          initialRegion={testCoordinates}
+        />
+
+        <View
+          style={{ height: "40%", width: "100%", backgroundColor: "black" }}
+        >
+          <VehicleSlider />
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

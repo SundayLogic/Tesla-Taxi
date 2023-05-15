@@ -4,13 +4,19 @@ import { useNavigation } from "@react-navigation/native";
 
 const RentButton = () => {
   const navigation = useNavigation();
+
+  const handlePress = () => {
+    navigation.navigate("HomeScreen");
+  };
+
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate("HomeScreen")}
+      onPress={handlePress}
       className="h-1/4 bg-gray-200 flex items-center justify-center p-5 w-80 rounded"
     >
-      <Text className=" text-xl tracking-widest font-bold">RENT</Text>
+      <Text className="text-xl font-bold uppercase">RENT</Text>
     </TouchableOpacity>
   );
 };
+
 export default RentButton;

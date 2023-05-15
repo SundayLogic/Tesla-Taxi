@@ -26,8 +26,34 @@ const data = [
     multiplier: 1.4,
   },
 ];
+
 const VehicleSlider = () => {
   const navigation = useNavigation();
+
+  const renderItem = ({ item }) => (
+    <TouchableOpacity onPress={() => navigation.navigate("PricingScreen")}>
+      <View className="bg-gray-200 flex items-center justify-center p-5 pl-6 pb-8 pt-4 m-2 mt-9 w-40 rounded">
+        <Image
+          style={{
+            width: 140,
+            height: 80,
+            resizeMode: "contain",
+          }}
+          source={{
+            uri: item.image,
+          }}
+        />
+        <Text className="mt-2 text-xl font-semibold">{item.title}</Text>
+        <Icon
+          className="p-2 bg-black rounded-full w-10 mt-4"
+          name="arrowright"
+          color="white"
+          type="antdesign"
+        />
+      </View>
+    </TouchableOpacity>
+  );
+
   return (
     <SafeAreaView>
       <View className="flex flex-row items-center justify-center">
@@ -36,36 +62,9 @@ const VehicleSlider = () => {
           Select a vehicle
         </Text>
       </View>
-      <FlatList
-        data={data}
-        horizontal
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => navigation.navigate("PricingScreen")}
-          >
-            <View className="bg-gray-200 flex items-center justify-center p-5 pl-6 pb-8 pt-4 m-2 mt-9 w-40 rounded">
-              <Image
-                style={{
-                  width: 140,
-                  height: 80,
-                  resizeMode: "contain",
-                }}
-                source={{
-                  uri: item.image,
-                }}
-              />
-              <Text className="mt-2 text-xl font-semibold">{item.title}</Text>
-              <Icon
-                className="p-2 bg-black rounded-full w-10 mt-4"
-                name="arrowright"
-                color="white"
-                type="antdesign"
-              />
-            </View>
-          </TouchableOpacity>
-        )}
-      />
+      <FlatList data={data} horizontal renderItem={renderItem} />
     </SafeAreaView>
   );
 };
+
 export default VehicleSlider;

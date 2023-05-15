@@ -5,15 +5,14 @@ import { setDestination, setOrigin } from "../../Redux/slices/navSlice";
 import { useNavigation } from "@react-navigation/native";
 
 const GooglePlacesSearchBar = () => {
-  // Location Setup
   const locationLatitudeLongitude = {
     lat: 51.5194,
     long: 0.127,
   };
-  // Needs Fixing
-  const API = "AIzaSyDcjLh4OgyMaKfH3JG-PtMM4EBTOl8HBp8";
+  const API_KEY = "AIzaSyDcjLh4OgyMaKfH3JG-PtMM4EBTOl8HBp8"; // Replace with your API key
   const navigation = useNavigation();
   const dispatch = useDispatch();
+
   const handlePress = (data, details = null) => {
     dispatch(
       setOrigin({
@@ -23,6 +22,7 @@ const GooglePlacesSearchBar = () => {
     );
     dispatch(setDestination(null));
   };
+
   return (
     <GooglePlacesAutocomplete
       className="mb-2"
@@ -35,14 +35,13 @@ const GooglePlacesSearchBar = () => {
         },
       }}
       query={{
-        key: API,
+        key: API_KEY,
         language: "en",
       }}
-      //Needs fixing
       onPress={() => navigation.navigate("MapScreen")}
-      returnKeyType={"search"}
+      returnKeyType="search"
       enablePoweredByContainer={false}
-      placeholder="where from?"
+      placeholder="Where from?"
       nearbyPlacesAPI="GooglePlacesSearch"
       debounce={800}
       isRowScrollable={true}

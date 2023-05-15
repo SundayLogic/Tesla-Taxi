@@ -1,10 +1,8 @@
 import React from "react";
 import { SafeAreaView, View } from "react-native";
 import NavOptions from "../Organisms/NavOptions";
-
 import GooglePlacesSearchBar from "../Molecules/GooglePlaceSearchBar";
 import TaxiLogo from "../Atoms/Images/TaxiLogo";
-import PromotionalVideo from "../Atoms/Images/PromotionalVideo";
 
 const HomeScreen = () => {
   return (

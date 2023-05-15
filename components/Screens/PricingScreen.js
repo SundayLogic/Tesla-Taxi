@@ -7,15 +7,15 @@ import TaxiLogo from "../Atoms/Images/TaxiLogo";
 import RentButton from "../Atoms/Buttons/RentButton";
 
 const PricingScreen = () => {
-  //Working on adding pin to map using Redux
   const origin = useSelector(selectOrigin);
+
   return (
-    <SafeAreaView className="flex justify-center items-center bg-black h-full w-full">
+    <SafeAreaView className="flex justify-center items-center bg-black h-full">
       <TaxiLogo />
       <View className="pt-2">
         <PricingScreenImage />
       </View>
-      <View className="px-7 justify-end space-y-10 flex items-center">
+      <View className="px-7 justify-end mt-10 items-center">
         <Text className="text-white text-xl pb-6">
           Autopilot magically steers, accelerates, and brakes the car while you
           relax. It's simply amazing.
