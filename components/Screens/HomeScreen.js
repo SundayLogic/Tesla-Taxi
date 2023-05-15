@@ -10,7 +10,9 @@ const HomeScreen = () => {
   return (
     <SafeAreaView className="flex justify-center items-center bg-black">
       <View className="p-4 justify-center">
-        <TaxiLogo />
+        <View className="self-center">
+          <TaxiLogo />
+        </View>
         <NavOptions />
         <GooglePlacesSearchBar />
       </View>

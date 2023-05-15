@@ -15,7 +15,7 @@ const data = [
     id: "2",
     title: "Order Food",
     image: "https://links.papareact.com/28w",
-    screen: "EatsScreen",
+    screen: "PricingScreen",
   },
 ];
 const NavOptions = () => {
@@ -25,7 +25,7 @@ const NavOptions = () => {
       data={data}
       horizontal
       renderItem={({ item }) => (
-        <TouchableOpacity onPress={() => navigation.navigate("MapScreen")}>
+        <TouchableOpacity onPress={() => navigation.navigate(item.screen)}>
           <View className="bg-gray-200 flex items-center justify-center p-5 pl-6 pb-8 pt-4 m-2 mt-9 w-40 rounded">
             <Image
               style={{

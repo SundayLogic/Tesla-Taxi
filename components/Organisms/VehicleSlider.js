@@ -26,7 +26,7 @@ const data = [
     multiplier: 1.4,
   },
 ];
-const VehicleOptionSlider = () => {
+const VehicleSlider = () => {
   const navigation = useNavigation();
   return (
     <SafeAreaView>
@@ -68,4 +68,4 @@ const VehicleOptionSlider = () => {
     </SafeAreaView>
   );
 };
-export default VehicleOptionSlider;
+export default VehicleSlider;
